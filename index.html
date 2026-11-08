@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Teste gratuito do ronco · Noite Silenciosa</title><meta name="description" content="8 perguntas e um plano de 5 minutos por dia, sem aparelho e sem cirurgia."><meta name="robots" content="noindex">
+<meta name="theme-color" content="#101a2b"><style>:root{--fundo:#101a2b;--texto:#f4efe6;--suave:#a9b4c4;--linha:#2a3a55;--cartao:#172439;--destaque:#f0b35a;--botao:#f0b35a;--botaotexto:#1a1408;--alertafundo:#3a2412;--alertalinha:#a8682a;--titulo:Georgia,"Times New Roman",serif}
+*{box-sizing:border-box;margin:0;padding:0}html{-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--fundo);color:var(--texto);line-height:1.5;font-size:17px}
+img{max-width:100%;display:block}
+.app{max-width:480px;margin:0 auto;min-height:100dvh;display:flex;flex-direction:column}
+.topo{padding:14px 16px 6px;font-weight:700;font-size:14px;letter-spacing:.3px;color:var(--suave)}
+.barra{height:6px;background:var(--linha);border-radius:6px;margin:6px 16px 0;overflow:hidden;visibility:hidden}
+.barra i{display:block;height:100%;width:0;background:var(--destaque);border-radius:6px;transition:width .3s}
+.tela{display:none;padding:18px 16px 32px;animation:entra .25s ease}.tela.on{display:block}
+@keyframes entra{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.tela{animation:none}.barra i{transition:none}}
+.kicker{font-size:13px;font-weight:700;letter-spacing:1px;color:var(--destaque);text-transform:uppercase;margin-bottom:10px}
+h1{font-family:var(--titulo);font-size:32px;line-height:1.14;margin-bottom:12px;text-wrap:balance}
+h2{font-family:var(--titulo);font-size:25px;line-height:1.2;margin-bottom:12px;text-wrap:balance}
+p{margin-bottom:12px}.suave{color:var(--suave);font-size:15px}
+.hero{border-radius:16px;overflow:hidden;margin:4px 0 16px;aspect-ratio:4/3;background:var(--linha)}.hero img{width:100%;height:100%;object-fit:cover}
+.btn{display:block;width:100%;min-height:58px;padding:16px;border:0;border-radius:14px;background:var(--botao);color:var(--botaotexto);font-size:18px;font-weight:800;text-align:center;text-decoration:none;cursor:pointer;font-family:inherit}
+.btn:active{transform:scale(.985)}.btn:focus-visible,.op:focus-visible{outline:3px solid var(--destaque);outline-offset:2px}
+.op{display:block;width:100%;min-height:56px;padding:14px 16px;margin-bottom:10px;border:2px solid var(--linha);border-radius:14px;background:var(--cartao);color:var(--texto);font-size:17px;font-weight:600;text-align:left;cursor:pointer;font-family:inherit}
+.op.sel{border-color:var(--destaque);box-shadow:inset 0 0 0 1px var(--destaque)}
+.ajuda{font-size:15px;color:var(--suave);margin:-4px 0 14px}
+.cartao{background:var(--cartao);border:1px solid var(--linha);border-radius:16px;padding:18px;margin:16px 0}
+.alerta{background:var(--alertafundo);border:1px solid var(--alertalinha);border-radius:16px;padding:16px;margin:16px 0;font-size:16px}
+.lista{list-style:none;margin:10px 0}.lista li{padding:8px 0 8px 30px;position:relative;border-bottom:1px solid var(--linha)}.lista li:last-child{border:0}
+.lista li:before{content:"✓";position:absolute;left:4px;font-weight:800;color:var(--destaque)}
+.preco{font-size:44px;font-weight:800;margin:4px 0;font-variant-numeric:lining-nums}
+details{border-bottom:1px solid var(--linha);padding:12px 0}summary{font-weight:700;cursor:pointer;min-height:32px}details p{margin:8px 0 0;font-size:16px}
+.fonte{font-size:13px;color:var(--suave);margin-top:8px}
+.carregando{text-align:center;padding-top:60px}.bola{width:54px;height:54px;border:5px solid var(--linha);border-top-color:var(--destaque);border-radius:50%;margin:0 auto 18px;animation:gira 1s linear infinite}@keyframes gira{to{transform:rotate(360deg)}}
+.rodape{padding:24px 16px 40px;font-size:13px;color:var(--suave);text-align:center;margin-top:auto}.rodape a{color:inherit}
+</style>
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+</head><body><div class="app">
+<div class="topo">Noite Silenciosa</div><div class="barra" id="barra" aria-hidden="true"><i></i></div>
+<section class="tela on" id="capa"><p class="kicker">Teste gratuito · 2 minutos</p><div class="hero"><img src="img/hero.jpg" alt="Casal dormindo à luz do abajur" width="800" height="600"></div><h1>Por qual exercício começar para roncar menos?</h1><p>Responda 8 perguntas. No fim, veja um plano de 5 minutos por dia, sem aparelho e sem cirurgia.</p><button class="btn" id="comecar" type="button">Começar o teste</button><p class="suave" style="margin-top:12px;text-align:center">Não substitui avaliação médica.</p></section>
+<section class="tela" id="q"></section>
+<section class="tela carregando" id="carrega"><div class="bola"></div><h2>Montando o plano…</h2></section>
+<section class="tela" id="oferta"><p class="kicker">Resultado do teste</p><h1>Ponto de partida: <span id="ponto">língua e céu da boca</span></h1>
+<p>O ronco vem de tecido mole vibrando na garganta, quando a musculatura relaxa durante o sono. Essa musculatura dá para treinar.</p>
+<div class="alerta" id="alerta" hidden><b>Atenção antes de começar.</b> Pausas na respiração, engasgos ou muito sono de dia podem indicar apneia, que precisa de avaliação médica. O plano não substitui tratamento.</div>
+<div class="cartao"><h2>O que dizem os estudos</h2><p>Em 2015, a revista Chest publicou um estudo com 39 pessoas com ronco. O grupo que fez exercícios de boca e garganta todo dia, por 3 meses, teve o índice de ronco medido em laboratório caindo quase pela metade. O grupo de comparação não mudou.</p><p class="fonte">Ieto V. et al., Chest, 2015. Estudo pequeno, e pesquisas maiores têm resultados mistos. Os resultados variam de pessoa para pessoa.</p></div>
+<h2>O plano Noite Silenciosa</h2><ul class="lista"><li>21 dias guiados, 5 minutos por dia</li><li>8 exercícios de língua, céu da boca e mandíbula, com passo a passo</li><li>Guia do que piora o ronco à noite</li><li>Diário do ronco, para acompanhar a evolução</li></ul>
+<div class="cartao" style="text-align:center"><p class="suave">Pagamento único, sem mensalidade</p><p class="preco">R$ 37</p><a class="btn" data-onde="oferta" href="#checkout-em-breve">Quero começar hoje</a><p class="suave" style="margin-top:12px">Garantia de 30 dias. Acesso na hora, pelo celular.</p></div>
+<h2>Dúvidas</h2>
+<details><summary>Precisa de aparelho?</summary><p>Não. Só a boca, a língua e 5 minutos.</p></details>
+<details><summary>Serve para apneia?</summary><p>Apneia precisa de avaliação médica. O plano não substitui tratamento.</p></details>
+<details><summary>Em quanto tempo dá para notar?</summary><p>Varia. No estudo de 2015, o resultado foi medido depois de 3 meses. Os 21 dias criam o hábito, e o ideal é continuar depois deles.</p></details>
+<details><summary>Como recebo?</summary><p>O acesso chega no e-mail logo depois do pagamento.</p></details>
+<p style="height:12px"></p><a class="btn" data-onde="fim" href="#checkout-em-breve">Quero o plano por R$ 37</a></section>
+<div class="rodape">Resultados variam de pessoa para pessoa. Este site não faz parte do Facebook nem é endossado por ele.</div>
+</div><script>window.PERGUNTAS=[{"k": "quem", "t": "Quem ronca aí em casa?", "o": ["Eu", "Quem dorme comigo", "Nós dois"]}, {"k": "tempo", "t": "Há quanto tempo isso acontece?", "o": ["Menos de 1 ano", "De 1 a 5 anos", "Mais de 5 anos", "Desde sempre"]}, {"k": "posicao", "t": "Em qual posição o ronco fica pior?", "o": ["Barriga para cima", "De lado", "Em qualquer posição", "Não sei"]}, {"k": "resp", "t": "Durante o sono, a respiração costuma ser…", "o": ["Pelo nariz", "Pela boca", "Não sei"]}, {"k": "tentou", "t": "O que já foi tentado?", "a": "Pode marcar mais de um.", "m": true, "o": ["Travesseiro especial", "Adesivo nasal", "Aparelho ou protetor bucal", "Spray ou remédio", "Nada ainda"]}, {"k": "pesa", "t": "O que mais pesa hoje?", "o": ["Alguém dorme mal por causa disso", "Quartos separados", "Vergonha de viajar ou dormir fora", "Acordar cansado"]}, {"k": "alerta", "t": "Alguém já notou pausas na respiração, engasgos durante o sono ou muito sono durante o dia?", "o": ["Sim", "Não", "Não sei"]}, {"k": "minutos", "t": "Quanto tempo dá para separar por dia?", "o": ["5 minutos", "10 minutos"]}];
+window.RESULTADO=function(R){var p=R.resp==='Pela boca'?'respiração pelo nariz e língua':(R.posicao==='Barriga para cima'?'base da língua e posição ao dormir':'língua e céu da boca');
+document.getElementById('ponto').textContent=p;
+document.getElementById('alerta').hidden=!(R.alerta==='Sim'||R.alerta==='Não sei');};</script><script>
+(function(){
+var P=window.PERGUNTAS,R={},i=-1,telas=document.querySelectorAll('.tela');
+function cl(){if(window.clarity)window.clarity.apply(null,arguments)}
+var barra=document.getElementById('barra'),bi=barra.querySelector('i');
+function mostra(id){telas.forEach(function(t){t.classList.toggle('on',t.id===id)});window.scrollTo(0,0)}
+function monta(){
+  var q=P[i],t=document.getElementById('q');
+  t.innerHTML='<h2>'+q.t+'</h2>'+(q.a?'<p class="ajuda">'+q.a+'</p>':'');
+  q.o.forEach(function(o){var b=document.createElement('button');b.type='button';b.className='op';b.textContent=o;b.setAttribute('aria-pressed','false');
+    b.onclick=function(){if(q.m){var s=!b.classList.contains('sel');b.classList.toggle('sel',s);b.setAttribute('aria-pressed',s?'true':'false');seg.disabled=!t.querySelector('.op.sel')}else{R[q.k]=o;prox()}};t.appendChild(b)});
+  var seg=document.createElement('button');
+  if(q.m){seg.type='button';seg.className='btn';seg.textContent='Continuar';seg.disabled=true;seg.onclick=function(){R[q.k]=[].map.call(t.querySelectorAll('.op.sel'),function(x){return x.textContent});prox()};t.appendChild(seg)}
+  bi.style.width=Math.round((i+1)/P.length*100)+'%';cl('set','quiz_etapa',String(i+1));cl('event','quiz_'+(i+1<10?'0':'')+(i+1)+'_'+q.k);mostra('q')
+}
+function prox(){i++;if(i<P.length){monta();return}barra.style.visibility='hidden';mostra('carrega');cl('event','quiz_fim');setTimeout(function(){window.RESULTADO(R);mostra('oferta');cl('event','oferta_viu')},1800)}
+document.getElementById('comecar').onclick=function(){barra.style.visibility='visible';cl('event','quiz_comecou');prox()};
+document.querySelectorAll('a[data-onde]').forEach(function(a){a.addEventListener('click',function(){cl('event','clique_checkout_'+a.getAttribute('data-onde'))})});
+})();
+</script></body></html>
